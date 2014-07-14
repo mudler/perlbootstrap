@@ -1,9 +1,9 @@
-package App::Perlbootstrap::Command::New;
+package App::Perlbootstrap::Command::List;
 
 use base qw(App::Perlbootstrap::Command);
 use warnings;
 use strict;
-use App::Perlbootstrap::Utils qw(find_template info create_dir rel_dir copy catdir refactor);
+use App::Perlbootstrap::Utils qw(search info message);
 
 =encoding utf-8
 
@@ -58,18 +58,8 @@ sub options {
 
 sub run {
     my $self = shift;
-    my $AppName=shift;
-    my $with=$self->{with} // "Mojo";
-    $with = "App::Perlbootstrap::template::$with" if ( $with !~ /::/ );
-
-    info "bootstrapping [$AppName]  with $with";
-    my $template_dir = find_template($with);
-    my $Appdir=rel_dir(catdir $AppName,"lib");
-    create_dir($Appdir);
-        info "Application [lib] directory resides in $Appdir";
-    copy($template_dir, $Appdir);
-    info "Refactoring $with in $Appdir";
-    refactor($with,$AppName,$Appdir);
+info "listing available templates:";
+    message "\t[template] ".(split(/::/,$_))[-1]." ($_)" for @{search("App::Perlbootstrap::template" )};
 
 
 }
