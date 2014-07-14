@@ -1,0 +1,21 @@
+#!/usr/bin/env perl
+use lib './lib';
+use warnings;
+use constant debug => $ENV{DEBUG};
+use App::Perlbootstrap::Command;
+use Carp::Always;
+
+
+$| = 1;
+
+binmode STDOUT, ':utf8';
+
+my $act = shift;
+
+$SIG{INT} = sub {
+    exit;
+};
+App::Perlbootstrap::Command->global_help and exit
+    if ( defined $act and $act eq "--help" );
+App::Perlbootstrap::Command->invoke( ($act), @ARGV );
+exit;

@@ -3,6 +3,8 @@ package App::Perlbootstrap;
 use strict;
 use 5.008_005;
 our $VERSION = '0.01';
+use App::CLI;
+use utf8;
 
 1;
 __END__
@@ -11,7 +13,7 @@ __END__
 
 =head1 NAME
 
-App::Perlbootstrap - Blah blah blah
+App::Perlbootstrap - a perl bootstrap application generator
 
 =head1 SYNOPSIS
 
