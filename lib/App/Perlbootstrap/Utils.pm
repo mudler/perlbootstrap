@@ -16,7 +16,7 @@ our @EXPORT = qw(info error);
 
 our @EXPORT_OK = (
     @EXPORT,
-    qw( search warnings message rel_dir create_dir write_file spurt rel_file find_template copy catdir refactor)
+    qw( search warnings message rel_dir create_dir spurt rel_file find_template copy catdir refactor)
 );
 $File::Copy::Recursive::CPRFComp = 1;
 
@@ -97,12 +97,7 @@ sub create_dir {
 }
 sub rel_file { catfile( getcwd(), split '/', pop ) }
 
-sub write_file {
-    my ( $path, $data ) = @_;
-    &create_dir( dirname $path);
-    &spurt( $data, $path );
-    &info("  [write] $path");
-}
+
 
 sub spurt {
     my ( $content, $path ) = @_;

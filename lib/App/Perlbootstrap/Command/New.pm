@@ -3,7 +3,8 @@ package App::Perlbootstrap::Command::New;
 use base qw(App::Perlbootstrap::Command);
 use warnings;
 use strict;
-use App::Perlbootstrap::Utils qw(find_template info create_dir rel_dir copy catdir refactor);
+use App::Perlbootstrap::Utils
+    qw(find_template info create_dir rel_dir copy catdir refactor);
 
 =encoding utf-8
 
@@ -52,25 +53,22 @@ L<App::Perlbootstrap>, L<App::Perlbootstrap::Command::Help>
 =cut
 
 sub options {
-    (   "w|with=s"  => "with",
-    );
+    ( "w|with=s" => "with", );
 }
 
 sub run {
-    my $self = shift;
-    my $AppName=shift;
-    my $with=$self->{with} // "Mojo";
-    $with = "App::Perlbootstrap::template::$with" if ( $with !~ /::/ );
-
-    info "bootstrapping [$AppName]  with $with";
+    my $self    = shift;
+    my $AppName = shift;
+    my $with    = $self->{with} // "Mojo";
+    $with = "App::Perlbootstrap::template::" . ucfirst($with)
+        if ( $with !~ /::/ );
+    info "Bootstrapping '$AppName'  with '$with':";
     my $template_dir = find_template($with);
-    my $Appdir=rel_dir(catdir $AppName,"lib");
+    my $Appdir = rel_dir( catdir $AppName, "lib" );
     create_dir($Appdir);
-        info "Application [lib] directory resides in $Appdir";
-    copy($template_dir, $Appdir);
-    info "Refactoring $with in $Appdir";
-    refactor($with,$AppName,$Appdir);
-
+    copy( $template_dir, $Appdir );
+    info "Refactoring '$with' -> '$AppName'";
+    refactor( $with, $AppName, $Appdir );
 
 }
 

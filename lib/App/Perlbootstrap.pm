@@ -1,6 +1,7 @@
 package App::Perlbootstrap;
 
 use strict;
+use warnings;
 use 5.008_005;
 our $VERSION = '0.01';
 use App::CLI;

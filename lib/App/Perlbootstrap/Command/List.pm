@@ -51,16 +51,12 @@ L<App::Perlbootstrap>, L<App::Perlbootstrap::Command::Help>
 
 =cut
 
-sub options {
-    (   "w|with=s"  => "with",
-    );
-}
 
 sub run {
     my $self = shift;
-info "listing available templates:";
-    message "\t[template] ".(split(/::/,$_))[-1]." ($_)" for @{search("App::Perlbootstrap::template" )};
-
+    info "listing available templates:";
+    message "\t[template] " . ( split( /::/, $_ ) )[-1] . " ($_)"
+        for @{ search("App::Perlbootstrap::template") };
 
 }
 
