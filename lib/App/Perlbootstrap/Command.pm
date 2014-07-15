@@ -6,7 +6,7 @@ use constant global_options => ( 'h|help' => 'help' );
 
 sub alias {
     (   "n" => "new",
-
+        "l" => "list"
     );
 }
 
