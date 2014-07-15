@@ -36,9 +36,9 @@ help (--help for full)
 
 perlbootstrap it's a bootstrapp application generator for perl frameworks
 
-perlbootstrap n | new <AppName> [--with ]
+perlbootstrap  n | new <AppName> (--with Mojo)    -   generate a new "AppName" application
 
-perlbootstrap
+perlbootstrap   l | list    -   list available templates
 
 
 You can inspect further doing "perlbootstrap help <command>"
