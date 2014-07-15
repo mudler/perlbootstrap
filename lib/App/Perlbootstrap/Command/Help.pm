@@ -30,6 +30,7 @@ This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
 =head1 SEE ALSO
+
 L<App::Perlbootstrap>, L<App::Perlbootstrap::Command::New>
 
 =cut

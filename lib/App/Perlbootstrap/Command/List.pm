@@ -9,23 +9,17 @@ use App::Perlbootstrap::Utils qw(search info message);
 
 =head1 NAME
 
-App::Perlbootstrap::Command::New - generate a new perl application project
+App::Perlbootstrap::Command::List - List available application templates
 
 =head1 SYNOPSIS
 
-  $ perlbootstrap new --with mojo TestApplication
+  $ perlbootstrap list
 
 =head1 DESCRIPTION
 
-generate a new perl application project.
+list templates available for bootstrapping
 
 =head1 ARGUMENTS
-
-=over 4
-
-=item C<-w|--with>
-
-choose an application style.
 
 =item C<--help>
 
@@ -47,17 +41,16 @@ This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
 =head1 SEE ALSO
-L<App::Perlbootstrap>, L<App::Perlbootstrap::Command::Help>
+
+L<App::Perlbootstrap>, L<App::Perlbootstrap::Command::New>
 
 =cut
 
 
 sub run {
-    my $self = shift;
     info "listing available templates:";
     message "\t[template] " . ( split( /::/, $_ ) )[-1] . " ($_)"
         for @{ search("App::Perlbootstrap::template") };
-
 }
 
 1;

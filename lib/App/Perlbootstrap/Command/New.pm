@@ -18,7 +18,7 @@ App::Perlbootstrap::Command::New - generate a new perl application project
 
 =head1 DESCRIPTION
 
-generate a new perl application project.
+generate a new perl application project. You can specify a template where to bootstrap on.
 
 =head1 ARGUMENTS
 
@@ -48,7 +48,8 @@ This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
 =head1 SEE ALSO
-L<App::Perlbootstrap>, L<App::Perlbootstrap::Command::Help>
+
+L<App::Perlbootstrap>, L<App::Perlbootstrap::Command::List>
 
 =cut
 
