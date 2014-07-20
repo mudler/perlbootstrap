@@ -1,4 +1,4 @@
-package App::Perlbootstrap::template::Mojo::Test;
+package App::Perlbootstrap::template::Mojo::Obj;
 
 use strict;
 use warnings;
