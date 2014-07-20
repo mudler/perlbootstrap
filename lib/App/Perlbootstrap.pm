@@ -39,7 +39,7 @@ You can get further help:
 
 =item C<new MyApp>
 
-generate MyApp using the default template (or you can specify one using --with)
+generate MyApp and refactor using the default template (or you can specify one using --with)
 
 =item C<list>
 
