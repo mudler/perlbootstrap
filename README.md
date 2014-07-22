@@ -22,7 +22,7 @@ You can get further help:
 
 - `new MyApp`
 
-    generate MyApp using the default template (or you can specify one using --with)
+    generate MyApp and refactor using the default template (or you can specify one using --with)
 
 - `list`
 
