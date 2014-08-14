@@ -1,5 +1,5 @@
 package App::Perlbootstrap::template::Mojo::Loader;
-use App::Perlbootstrap::template::Mojo::Base -base;
+use App::Perlbootstrap::template::Mojo::Obj -base;
 
 use File::Basename 'fileparse';
 use File::Spec::Functions qw(catdir catfile splitdir);
