@@ -2,8 +2,9 @@ package App::Perlbootstrap::template::Mojo::Util;
 use base 'Exporter';
 use strict;
 use warnings;
+use MIME::Base64 qw(decode_base64 encode_base64);
 our @EXPORT = ();
-our @EXPORT_OK = ( qw(info error warning), @EXPORT );
+our @EXPORT_OK = ( qw(b64_decode b64_encode class_to_path info error warning), @EXPORT );
 
 sub info {
     print "[info] - @_  \n";
@@ -16,7 +17,9 @@ sub error {
 sub warning {
     print "[warning] - @_  \n";
 }
-
+sub b64_decode { decode_base64($_[0]) }
+sub b64_encode { encode_base64($_[0], $_[1]) }
+sub class_to_path { join '.', join('/', split /::|'/, shift), 'pm' }
 1;
 __END__
 =encoding utf8
